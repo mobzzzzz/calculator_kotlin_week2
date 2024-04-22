@@ -1,5 +1,5 @@
 fun main() {
-    val calculator = Level1.Calculator()
+    val calculator = Level2.Calculator()
 
     println("숫자 두개 입력")
     val num1 = readln().toInt()
@@ -15,7 +15,7 @@ fun main() {
     }
 }
 
-class Level1 {
+class Level2 {
     class Calculator {
         fun add(a: Int, b: Int): Int {
             return a + b

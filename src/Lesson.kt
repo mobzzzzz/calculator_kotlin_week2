@@ -191,7 +191,7 @@ class FunctionLesson {
         }
     }
 
-        // Kotlin 컨벤션을 따르지 않은 형태
+    // Kotlin 컨벤션을 따르지 않은 형태
 //    fun checkRank(score: Int): String {
 //        if (score >= 90) {
 //            return "A"
