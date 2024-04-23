@@ -7,9 +7,9 @@ fun main() {
 //    condition()
 //    iterator()
 //    casting()
-    FunctionLesson().sumMain()
-    FunctionLesson().weatherMain()
-    FunctionLesson().scoreMain()
+//    FunctionLesson().sumMain()
+//    FunctionLesson().weatherMain()
+//    FunctionLesson().scoreMain()
 }
 
 /**
@@ -203,4 +203,105 @@ class FunctionLesson {
 //            return "D"
 //        }
 //    }
+}
+
+fun collection() {
+    val multiply: (Int, Int) -> Int = { a, b -> a * b }
+    val result = multiply(5, 3) // 결과: 15
+
+
+    val numbers = listOf(1, 2, 3, 4, 5)
+// forEach는 컬렉션의 각 요소에 대해 주어진 람다 표현식을 실행합니다.
+    val printFunction: (String) -> Unit = { value -> println(value) }
+    numbers.forEach { printFunction }
+
+
+
+    val list = listOf("apple", "banana", "orange")
+    val mapFromList = list.associateWith { it.length }
+
+    val map = mapOf("apple" to 5, "banana" to 3, "orange" to 8)
+    val listFromMap = map.toList()
+
+
+
+    val people = listOf(
+        mapOf("name" to "김르탄", "age" to 27),
+        mapOf("name" to "이스파", "age" to 18),
+        mapOf("name" to "최개발", "age" to 54),
+        mapOf("name" to "박코딩", "age" to 32),
+    )
+    println(people)
+
+    people.forEach { println(it) }
+    people.filter {
+        val age = it["age"]
+
+        if (age is Int) {
+            age >= 30
+        } else {
+            false
+        }
+    }.forEach { println(it) }
+}
+
+class Exception {
+    fun divide(a: Int, b: Int): Int {
+        return a / b
+    }
+
+    fun divideByZeroMain() {
+        val result = divide(10, 0)
+        println(result)
+    }
+
+
+    fun safeIntegerConversion(str: String): Int {
+        return try {
+            str.toInt()
+        } catch (e: NumberFormatException) {
+            println("Error: ${e.message}")
+            0
+        }
+    }
+
+    fun NFEMain() {
+        val userInput = "abc"
+        val result = safeIntegerConversion(userInput)
+        println(result)
+    }
+
+    fun performFileOperations() {
+//        val file = File("example.txt")
+//
+//        try {
+//            // 파일 관련 작업 수행
+//            println("File operations performed.")
+//        } finally {
+//            // 항상 실행되는 블록
+//            file.close()
+//            println("File closed.")
+//        }
+    }
+
+    fun fileExceptionMain() {
+        performFileOperations()
+    }
+
+
+    fun validateInput(input: String) {
+        if (input.isBlank()) {
+            throw Exception("Input should not be blank.")
+        }
+
+        println("Input is valid: $input")
+    }
+
+    fun illegalArgumentExceptionMain() {
+        try {
+            validateInput("")
+        } catch (e: IllegalArgumentException) {
+            println("Caught an exception: ${e.message}")
+        }
+    }
 }
