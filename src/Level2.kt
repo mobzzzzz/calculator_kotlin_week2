@@ -24,7 +24,7 @@ fun main() {
     println("계산기 종료 위잉")
 }
 
-class Level2 {
+private class Level2 {
     class Calculator {
         var num1: Int
         var num2: Int

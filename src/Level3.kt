@@ -29,7 +29,7 @@ fun main() {
     }
 }
 
-class Level3 {
+private class Level3 {
     class Calculator {
         var num1: Double
         var num2: Double
