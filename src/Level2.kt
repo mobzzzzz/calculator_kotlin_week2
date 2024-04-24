@@ -15,7 +15,7 @@ fun main() {
             "-" -> calculator.showSubtractResult()
             "*" -> calculator.showMultiplyResult()
             "/" -> calculator.showDivideResult()
-            "%" -> calculator.showModularResult()
+            "%" -> calculator.showModuloesult()
         }
 
         calculator.operate(operator)
@@ -52,7 +52,7 @@ class Level2 {
             println("$num1 / $num2 = ${num1 / num2}")
         }
 
-        fun showModularResult() {
+        fun showModuloesult() {
             println("$num1 % $num2 = ${num1 % num2}")
         }
 
@@ -62,7 +62,7 @@ class Level2 {
                 "-" -> showSubtractResult()
                 "*" -> showMultiplyResult()
                 "/" -> showDivideResult()
-                "%" -> showModularResult()
+                "%" -> showModuloesult()
             }
         }
     }
