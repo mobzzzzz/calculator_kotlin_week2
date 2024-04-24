@@ -4,16 +4,24 @@ fun main() {
 
 
     println("무슨 계산을 하고 싶으세요? 현재 숫자1: ${calculator.num1} 현재 숫자2: ${calculator.num2}")
-    println("(+, -, *, /, %)")
-    val operator = readln()
+    var operator = ""
 
-    when (operator) {
-        "+" -> calculator.showAddResult()
-        "-" -> calculator.showSubsctractResult()
-        "*" -> calculator.showMultiplyResult()
-        "/" -> calculator.showDivideResult()
-        "%" -> calculator.showModularResult()
+    while (operator != "Q") {
+        println("(+, -, *, /, %) 끝내려면 Q 입력")
+        operator = readln()
+
+        when (operator) {
+            "+" -> calculator.showAddResult()
+            "-" -> calculator.showSubtractResult()
+            "*" -> calculator.showMultiplyResult()
+            "/" -> calculator.showDivideResult()
+            "%" -> calculator.showModularResult()
+        }
+
+        calculator.operate(operator)
     }
+
+    println("계산기 종료 위잉")
 }
 
 class Level2 {
@@ -32,7 +40,7 @@ class Level2 {
             println("$num1 + $num2 = ${num1 + num2}")
         }
 
-        fun showSubsctractResult() {
+        fun showSubtractResult() {
             println("$num1 - $num2 = ${num1 - num2}")
         }
 
@@ -46,6 +54,16 @@ class Level2 {
 
         fun showModularResult() {
             println("$num1 % $num2 = ${num1 % num2}")
+        }
+
+        fun operate(operator: String) {
+            when (operator) {
+                "+" -> showAddResult()
+                "-" -> showSubtractResult()
+                "*" -> showMultiplyResult()
+                "/" -> showDivideResult()
+                "%" -> showModularResult()
+            }
         }
     }
 }
