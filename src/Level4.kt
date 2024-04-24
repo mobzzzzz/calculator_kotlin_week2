@@ -2,12 +2,10 @@ import kotlin.math.round
 
 fun main() {
     val calculator = Level4.Calculator()
-
-    println("무슨 계산을 하고 싶으세요? 현재 숫자1: ${calculator.num1} 현재 숫자2: ${calculator.num2}")
-    var operator = ""
+    var operator: String
 
     while (true) {
-        println("(+, -, *, /, %) 끝내려면 Q 입력")
+        println("(+, -, *, /, %), 숫자 변경은 R, 끝내려면 Q 입력")
         operator = readln()
 
         try {
@@ -17,6 +15,10 @@ fun main() {
                 "*" -> Level4.Calculator.MultiplyOperation()
                 "/" -> Level4.Calculator.DivideOperation()
                 "%" -> Level4.Calculator.ModuloOperation()
+                "R" -> {
+                    calculator.setCalculatorNumbers()
+                    continue
+                }
                 "Q" -> {
                     println("계산기 종료 위잉")
                     break
@@ -45,16 +47,26 @@ fun main() {
     println(abstractCalculator.operate())
 }
 
-class Level4 {
+private class Level4 {
     class Calculator {
-        var num1: Double
-        var num2: Double
+        var num1: Double = 0.0
+        var num2: Double = 0.0
 
         init {
+            setCalculatorNumbers()
+        }
+
+        fun setCalculatorNumbers() {
             println("계산기에 저장할 첫번째 숫자 입력")
             num1 = readln().toDouble()
             println("계산기에 저장할 두번째 숫자 입력")
             num2 = readln().toDouble()
+
+            println("숫자 저장 완료! 현재 숫자1: $num1 현재 숫자2: $num2")
+        }
+
+        fun operation(operation: Operation): Double {
+            return round(operation.operate(num1, num2) * 100.0) / 100.0
         }
 
         interface Operation {
@@ -86,14 +98,10 @@ class Level4 {
                 return num1 % num2
             }
         }
-
-        fun operation(operation: Operation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
     }
 }
 
-class Level4Abstract {
+private class Level4Abstract {
     class Calculator(var operation: Operation) {
         var num1: Double
         var num2: Double
