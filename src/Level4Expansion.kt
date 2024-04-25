@@ -17,7 +17,6 @@ fun main() {
     }
 }
 
-// 문자열 연산 처리 (전위 표기나 후위 표기법 계산은 나중에)
 class Level4Expansion {
     class Calculator {
         companion object {
