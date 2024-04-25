@@ -10,7 +10,7 @@ fun main() {
                 break
             }
 
-            Level4Expansion.Calculator.operate(input)
+            Level4Expansion.Calculator.operateWithPrint(input)
         } catch (e: Throwable) {
             println(e.message)
         }
@@ -21,7 +21,7 @@ fun main() {
 class Level4Expansion {
     class Calculator {
         companion object {
-            fun operate(input: String) {
+            fun operateWithPrint(input: String) {
                 var result = 0.0
 
                 Regex("""\d+|\S""").findAll(input).toList().map { it.value }.let { matchResults ->
