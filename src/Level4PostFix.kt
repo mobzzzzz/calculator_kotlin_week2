@@ -25,7 +25,7 @@ class Level4PostFix {
          */
         fun resultFromInput(input: String): Double {
             if (input.isEmpty()) { throw IllegalArgumentException("연산식을 입력해 주세요.") }
-            if (input.trim().last().let { !it.isDigit() && it == ')' }) { throw IllegalArgumentException("연산식을 제대로 지어주세요.") }
+            if (input.trim().last().let { !it.isDigit() && it != ')' }) { throw IllegalArgumentException("연산식을 제대로 지어주세요.") }
 
             return this.calculateWithPostFix(this.findNumberOrOperators(input).toPostFixList())
         }
@@ -68,8 +68,9 @@ class Level4PostFix {
                         else {
                             if (operatorList.last().let { it == "*" || it == "/" || it == "%" }) {
                                 tempPostFixList.add(operatorList.removeLast())
-                                operatorList.add(value)
                             }
+
+                            operatorList.add(value)
                         }
                     }
                     // 괄호가 닫히면 열린 괄호를 찾을 때 까지의 연산자를 다 후위 표기 리스트로 넣어버림
