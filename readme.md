@@ -3,7 +3,7 @@
 ## ✨ 240422-240426 내일배움캠프 2주차에 만든 계산기
 
 과제에 맞추어 각기 다른 스타일로 작성해 총 6개의 파일로 분리되어 있습니다.
-> <h4>목차
+> 목차
 > 1. [Level 1 - 간단한 연산 Class](#level-1)
 > 2. [Level 2 - 나머지를 추가하고 Class 구조 개선](#level-2)
 > 3. [Level 3 - 연산을 분리하고 오버로딩으로 구분](#level-3)
@@ -41,9 +41,8 @@ class Calculator {
 ### Level 2
 
 >- Lv1에서 만든 Calculator 클래스에 “나머지 연산”이 가능하도록 코드를 추가하고, 연산 진행 후 출력
-><br/>
-><br/>
->추가로 필드 사용을 위해 숫자를 Calculator로 이동, 반복적으로 연산 선택 가능 
+
+추가로 필드 사용을 위해 숫자를 Calculator로 이동, 반복적으로 연산 선택 가능 
 
 <details><summary>코드 보기</summary>
 
@@ -96,10 +95,11 @@ while (operator != "Q") {
 >  - SubstractOperation(빼기)
 >  - MultiplyOperation(곱하기)
 >  - DivideOperation(나누기)
->  - 관계를 맺은 후 필요하다면 Calculator 클래스의 내부코드를 변경<br/>
->  <br/>
->단일 표현식으로 코드를 간소화하고 과제 구현상 관계가 없기 때문에 오버로딩으로 함수를 구별<br/>
->간단한 예외처리 추가
+>  - 관계를 맺은 후 필요하다면 Calculator 클래스의 내부코드를 변경
+
+단일 표현식으로 코드를 간소화하고 과제 구현상 관계가 없기 때문에 오버로딩으로 함수를 구별
+
+간단한 예외처리 추가
 
 <details><summary>코드 보기</summary>
 
@@ -147,9 +147,8 @@ throw IllegalArgumentException("Modulo by zero")
 >  - SubtractOperation(빼기)
 >  - MultiplyOperation(곱하기)
 >  - DivideOperation(나누기)
-> <br/>
-> <br/>
->Abstract를 통한 추상화도 작성하긴 했지만 부모를 참조할 일이 없어 Interface를 메인으로 진행
+
+Abstract를 통한 추상화도 작성하긴 했지만 부모를 참조할 일이 없어 Interface를 메인으로 진행
 
 <details><summary>코드 보기</summary>
 
