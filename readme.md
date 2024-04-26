@@ -9,7 +9,7 @@
 5. [기능 확장 - 문자열로 수식 받아 연산하기](#기능-확장---문자열로-수식-받아-연산하기)
 6. [기능 확장 - 수식을 후위 표현식으로 변경해 연산하기](#기능-확장---수식을-후위-표현식으로-변경해-연산하기)
 
-## Level 1
+### Level 1
 
 - 더하기, 빼기, 나누기, 곱하기 연산을 수행할 수 있는 Calculator 클래스를 만들기
 - 생성한 클래스를 이용하여 연산을 진행하고 출력하기
@@ -30,7 +30,7 @@ class Calculator {
 
 ---
 
-## Level 2
+### Level 2
 
 
 
@@ -82,7 +82,7 @@ while (operator != "Q") {
 
 ---
 
-## Level 3
+### Level 3
 
 - 아래 각각 클래스들을 만들고 클래스간의 관계를 고려하여 Calculator 클래스와 관계 맺기
   - AddOperation(더하기)
@@ -133,7 +133,7 @@ throw IllegalArgumentException("Modulo by zero")
 
 ---
 
-## Level 4
+### Level 4
 
 - 아래 연산 클래스들을 AbstractOperation라는 클래스명으로 만들어 사용하여 추상 클래스로 정의하고 Calculator 클래스의 내부 코드를 변경합니다.
   - AddOperation(더하기)
@@ -160,7 +160,7 @@ class Calculator {
 
 ---
 
-## 기능 확장 - 문자열로 수식 받아 연산하기
+### 기능 확장 - 문자열로 수식 받아 연산하기
 
 - 문자열로 입력받은 수식을 한 번에 계산하기
 - 앞에서부터 순서대로 연산할 뿐이라 연산자 우선순위, 괄호 처리는 되어있지 않음
@@ -200,7 +200,7 @@ fun operateWithPrint(input: String) {
 
 ---
 
-## 기능 확장 - 수식을 후위 표현식으로 변경해 연산하기
+### 기능 확장 - 수식을 후위 표현식으로 변경해 연산하기
 
 - 연산자 우선순위 및 괄호를 포함해 수식 계산이 가능한 후위표현식 계산기 만들기
 - 각 함수의 주석을 Javadoc 형태로 작성
@@ -294,13 +294,13 @@ private fun calculateWithPostFix(postFixList: List<String>): Double {
 
 ---
 
-## 추가하고 싶은 기능
+### 추가할 기능
 
 - <h3>Function 매개변수 안정성을 높이기 위해 Interface 설계 또는 연산자 Enum class 관리하기 (like swift enum)
 
----
 
-## 개발 환경
+
+### 개발 환경
 
 - Language : Kotlin 1.9
 - IDE : IntelliJ
