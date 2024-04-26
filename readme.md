@@ -4,7 +4,7 @@
 
 과제에 맞추어 각기 다른 스타일로 작성해 총 6개의 파일로 분리되어 있습니다.
 <br/>
-<h3>목차
+<h3>목차</h3>
 > 1. [Level 1 - 간단한 연산 Class](#level-1)
 > 2. [Level 2 - 나머지를 추가하고 Class 구조 개선](#level-2)
 > 3. [Level 3 - 연산을 분리하고 오버로딩으로 구분](#level-3)
@@ -303,7 +303,7 @@ private fun calculateWithPostFix(postFixList: List<String>): Double {
 
 ### 추가할 기능
 
-- <h5>Function 매개변수 안정성을 높이기 위해 Interface 설계 또는 연산자 Enum class 관리하기 (like swift enum)
+- Function 매개변수 안정성을 높이기 위해 Interface 설계 또는 연산자 Enum class 관리하기 (like swift enum)
 
 
 
