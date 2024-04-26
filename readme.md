@@ -2,17 +2,25 @@
 
 ## ✨ 240422-240426 내일배움캠프 2주차에 만든 계산기
 
-1. [Level 1 - 간단한 연산 Class](#level-1)
-2. [Level 2 - 나머지를 추가하고 Class 구조 개선](#level-2)
-3. [Level 3 - 연산을 분리하고 오버로딩으로 구분](#level-3)
-4. [Level 4 - 연산간의 관계 확립](#level-4)
-5. [기능 확장 - 문자열로 수식 받아 연산하기](#기능-확장---문자열로-수식-받아-연산하기)
-6. [기능 확장 - 수식을 후위 표현식으로 변경해 연산하기](#기능-확장---수식을-후위-표현식으로-변경해-연산하기)
+과제에 맞추어 각기 다른 스타일로 작성해 총 6개의 파일로 분리되어 있습니다.
+> <h4>목차
+> 1. [Level 1 - 간단한 연산 Class](#level-1)
+> 2. [Level 2 - 나머지를 추가하고 Class 구조 개선](#level-2)
+> 3. [Level 3 - 연산을 분리하고 오버로딩으로 구분](#level-3)
+> 4. [Level 4 - 연산간의 관계 확립](#level-4)
+> 5. [기능 확장 - 문자열로 수식 받아 연산하기](#기능-확장---문자열로-수식-받아-연산하기)
+> 6. [기능 확장 - 수식을 후위 표현식으로 변경해 연산하기](#기능-확장---수식을-후위-표현식으로-변경해-연산하기)
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### Level 1
 
-- 더하기, 빼기, 나누기, 곱하기 연산을 수행할 수 있는 Calculator 클래스를 만들기
-- 생성한 클래스를 이용하여 연산을 진행하고 출력하기
+>- 더하기, 빼기, 나누기, 곱하기 연산을 수행할 수 있는 Calculator 클래스를 만들기
+>- 생성한 클래스를 이용하여 연산을 진행하고 출력하기
 
 <details><summary>코드 보기</summary>
 
@@ -32,11 +40,10 @@ class Calculator {
 
 ### Level 2
 
-
-
-- Lv1에서 만든 Calculator 클래스에 “나머지 연산”이 가능하도록 코드를 추가하고, 연산 진행 후 출력
-
-추가로 필드 사용을 위해 숫자를 Calculator로 이동, 반복적으로 연산 선택 가능 
+>- Lv1에서 만든 Calculator 클래스에 “나머지 연산”이 가능하도록 코드를 추가하고, 연산 진행 후 출력
+><br/>
+><br/>
+>추가로 필드 사용을 위해 숫자를 Calculator로 이동, 반복적으로 연산 선택 가능 
 
 <details><summary>코드 보기</summary>
 
@@ -84,15 +91,15 @@ while (operator != "Q") {
 
 ### Level 3
 
-- 아래 각각 클래스들을 만들고 클래스간의 관계를 고려하여 Calculator 클래스와 관계 맺기
-  - AddOperation(더하기)
-  - SubstractOperation(빼기)
-  - MultiplyOperation(곱하기)
-  - DivideOperation(나누기)
-  - 관계를 맺은 후 필요하다면 Calculator 클래스의 내부코드를 변경
-
-단일 표현식으로 코드를 간소화하고 과제 구현상 관계가 없기 때문에 오버로딩으로 함수를 구별
-간단한 예외처리 추가
+>- 아래 각각 클래스들을 만들고 클래스간의 관계를 고려하여 Calculator 클래스와 관계 맺기
+>  - AddOperation(더하기)
+>  - SubstractOperation(빼기)
+>  - MultiplyOperation(곱하기)
+>  - DivideOperation(나누기)
+>  - 관계를 맺은 후 필요하다면 Calculator 클래스의 내부코드를 변경<br/>
+>  <br/>
+>단일 표현식으로 코드를 간소화하고 과제 구현상 관계가 없기 때문에 오버로딩으로 함수를 구별<br/>
+>간단한 예외처리 추가
 
 <details><summary>코드 보기</summary>
 
@@ -135,13 +142,14 @@ throw IllegalArgumentException("Modulo by zero")
 
 ### Level 4
 
-- 아래 연산 클래스들을 AbstractOperation라는 클래스명으로 만들어 사용하여 추상 클래스로 정의하고 Calculator 클래스의 내부 코드를 변경합니다.
-  - AddOperation(더하기)
-  - SubtractOperation(빼기)
-  - MultiplyOperation(곱하기)
-  - DivideOperation(나누기)
-
-Abstract를 통한 추상화도 작성하긴 했지만 부모를 참조할 일이 없어 Interface를 메인으로 진행
+> - 아래 연산 클래스들을 AbstractOperation라는 클래스명으로 만들어 사용하여 추상 클래스로 정의하고 Calculator 클래스의 내부 코드를 변경합니다.
+>  - AddOperation(더하기)
+>  - SubtractOperation(빼기)
+>  - MultiplyOperation(곱하기)
+>  - DivideOperation(나누기)
+> <br/>
+> <br/>
+>Abstract를 통한 추상화도 작성하긴 했지만 부모를 참조할 일이 없어 Interface를 메인으로 진행
 
 <details><summary>코드 보기</summary>
 
@@ -162,8 +170,8 @@ class Calculator {
 
 ### 기능 확장 - 문자열로 수식 받아 연산하기
 
-- 문자열로 입력받은 수식을 한 번에 계산하기
-- 앞에서부터 순서대로 연산할 뿐이라 연산자 우선순위, 괄호 처리는 되어있지 않음
+> - 문자열로 입력받은 수식을 한 번에 계산하기
+> - 앞에서부터 순서대로 연산할 뿐이라 연산자 우선순위, 괄호 처리는 되어있지 않음
 
 <details><summary>코드 보기</summary>
 
@@ -202,8 +210,8 @@ fun operateWithPrint(input: String) {
 
 ### 기능 확장 - 수식을 후위 표현식으로 변경해 연산하기
 
-- 연산자 우선순위 및 괄호를 포함해 수식 계산이 가능한 후위표현식 계산기 만들기
-- 각 함수의 주석을 Javadoc 형태로 작성
+> - 연산자 우선순위 및 괄호를 포함해 수식 계산이 가능한 후위표현식 계산기 만들기
+> - 각 함수의 주석을 Javadoc 형태로 작성
 
 <details><summary>코드 보기</summary>
 
@@ -296,7 +304,7 @@ private fun calculateWithPostFix(postFixList: List<String>): Double {
 
 ### 추가할 기능
 
-- <h3>Function 매개변수 안정성을 높이기 위해 Interface 설계 또는 연산자 Enum class 관리하기 (like swift enum)
+- <h5>Function 매개변수 안정성을 높이기 위해 Interface 설계 또는 연산자 Enum class 관리하기 (like swift enum)
 
 
 
