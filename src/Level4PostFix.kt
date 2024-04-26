@@ -94,6 +94,12 @@ class Level4PostFix {
             return tempPostFixList
         }
 
+        /**
+         * 후위 표현식을 계산합니다.
+         *
+         * @param postFixList: 후위 표현식으로 숫자, 연산자를 저장한 리스트
+         * @return 후위 표현식을 계산 완료한 값
+         */
         private fun calculateWithPostFix(postFixList: List<String>): Double {
             val tempPostFixList = postFixList.toMutableList()
             val stackLikeForCalculate = mutableListOf<Double>()

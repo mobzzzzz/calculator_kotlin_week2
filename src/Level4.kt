@@ -65,9 +65,7 @@ private class Level4 {
             println("숫자 저장 완료! 현재 숫자1: $num1 현재 숫자2: $num2")
         }
 
-        fun operation(operation: Operation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: Operation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
 
         interface Operation {
             fun operate(num1: Double, num2: Double): Double
@@ -147,49 +145,6 @@ private class Level4Abstract {
             this.operation = operation
         }
 
-        fun operate(): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operate(): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
     }
 }
-
-
-/*
-// Abstract 클래스 예시
-abstract class Character(var hp: Int) {
-    fun takeDamage(damage: Int) {
-        hp -= damage
-        if (hp <= 0) {
-            die()
-        }
-    }
-
-    abstract fun die()
-}
-
-class Warrior(hp: Int) : Character(hp) {
-    override fun die() {
-        println("Warrior died!")
-    }
-}
-
-// Interface 예시
-interface Damageable {
-    var hp: Int
-    fun takeDamage(damage: Int)
-    fun die()
-}
-
-class Mage(override var hp: Int) : Damageable {
-    override fun takeDamage(damage: Int) {
-        hp -= damage
-        if (hp <= 0) {
-            die()
-        }
-    }
-
-    override fun die() {
-        println("Mage died!")
-    }
-}
-*/

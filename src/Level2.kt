@@ -10,13 +10,13 @@ fun main() {
         println("(+, -, *, /, %) 끝내려면 Q 입력")
         operator = readln()
 
-        when (operator) {
-            "+" -> calculator.showAddResult()
-            "-" -> calculator.showSubtractResult()
-            "*" -> calculator.showMultiplyResult()
-            "/" -> calculator.showDivideResult()
-            "%" -> calculator.showModuloResult()
-        }
+//        when (operator) {
+//            "+" -> calculator.showAddResult()
+//            "-" -> calculator.showSubtractResult()
+//            "*" -> calculator.showMultiplyResult()
+//            "/" -> calculator.showDivideResult()
+//            "%" -> calculator.showModuloResult()
+//        }
 
         calculator.operate(operator)
     }

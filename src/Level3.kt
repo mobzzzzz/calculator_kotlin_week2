@@ -67,24 +67,14 @@ private class Level3 {
             }
         }
 
-        fun operation(operation: AddOperation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: AddOperation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
 
-        fun operation(operation: SubtractOperation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: SubtractOperation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
 
-        fun operation(operation: MultiplyOperation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: MultiplyOperation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
 
-        fun operation(operation: DivideOperation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: DivideOperation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
 
-        fun operation(operation: ModuloOperation): Double {
-            return round(operation.operate(num1, num2) * 100.0) / 100.0
-        }
+        fun operation(operation: ModuloOperation): Double = round(operation.operate(num1, num2) * 100.0) / 100.0
     }
 }
