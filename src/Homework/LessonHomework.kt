@@ -1,3 +1,5 @@
+package Homework
+
 import kotlin.Exception
 
 fun main() {

@@ -1,4 +1,4 @@
-
+package Homework
 fun main() {
     var bird = Bird("새")
     var chicken = Chicken("닭")
